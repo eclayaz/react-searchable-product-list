@@ -11,6 +11,8 @@ class ProductTable extends React.Component {
           key={item.category}
           category={item.category}
           products={item.items}
+          inStock={this.props.inStock}
+          search={this.props.search}
         />
       );
     });

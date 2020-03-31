@@ -30,7 +30,11 @@ class FilterableProductTable extends React.Component {
           handleSearch={this.handleSearch}
         />
         <br /> <br />
-        <ProductTable productList={this.props.productList} />
+        <ProductTable
+          productList={this.props.productList}
+          inStock={this.state.inStock}
+          search={this.state.search}
+        />
       </div>
     );
   }

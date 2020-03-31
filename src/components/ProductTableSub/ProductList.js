@@ -14,6 +14,17 @@ class ProductList extends React.Component {
   render() {
     let items = [];
     this.props.products.forEach(element => {
+      if (this.props.inStock && !element.stocked) {
+        return;
+      }
+
+      if (
+        this.props.search &&
+        !element.name.match(new RegExp(this.props.search, "i"))
+      ) {
+        return;
+      }
+
       items.push(<SingleProduct key={element.key.toString()} item={element} />);
     });
 
